@@ -2,7 +2,7 @@
 
 When information about a job role is provided, follow these steps:
 
-1. **Generate a New LaTeX Resume File**: Create a new `.tex` file based on the original resume (`jagadeeshPotupureddyOriginalResume.tex`). Tailor the content to match the job requirements, emphasizing relevant skills, experiences, and qualifications.
+1. **Generate a New LaTeX Resume File**: Create a new `.tex` file based on the original resume (`jagadeeshPotupureddyOriginalResume.tex`). Tailor the content to match the job requirements, emphasizing relevant skills, experiences, and qualifications, Dont include profile or objective section.
 
 2. **Tailoring Guidelines**:
    - Update the PDF title to reflect the role (e.g., "Jagadeesh Potupureddy's CV - [Role Name]").
