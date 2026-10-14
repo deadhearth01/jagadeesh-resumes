@@ -1,0 +1,195 @@
+FLYTBASE APPLICATION ANSWERS
+(drop-in text for the form fields, grouped by question — works for Agentic AI Engineer,
+Software Engineer Intern, Solution Engineer, and Solutions Engineer Intern)
+
+NOTE TO SELF, read before pasting:
+- The numbers are from my real resume, but a few "what made it hard" details are my best
+  reconstruction. Read each one and fix anything that doesn't match what actually happened.
+- The 3-line answer is meant to be EXACTLY 3 lines. Don't let the box wrap it into 4.
+- Everything here is first person on purpose. Paste it as-is, don't polish it.
+
+
+=====================================================================
+WHERE DID YOU HEAR ABOUT THIS POSITION?
+=====================================================================
+
+FlytBase careers page — I found the open roles there directly.
+
+
+=====================================================================
+TELL US YOUR 2 BIGGEST ACHIEVEMENTS
+(For each: what you achieved, what made it hard, what you did differently.)
+=====================================================================
+
+ACHIEVEMENT 1 — CHITTI
+
+Outcome: I built CHITTI (scorewithchitti.in), an academic platform for engineering
+students. It's at 9,550+ users now, 1,500+ of them paying, and it has crossed ₹3L in
+revenue. It started as something free for a single branch.
+
+What made it hard: I was the entire technical team. No budget, no cofounder, and
+nobody was going to pay a student for notes they could already get free in a WhatsApp
+group. The build was the easy half — the hard half was earning the right to charge for it.
+
+What I did differently: I refused to build the whole thing. I shipped a thin slice to
+2,200 people first, watched which parts they actually opened, and only fixed those.
+Two more rounds of that and the paid tier sold itself, because my users had already
+told me what they'd pay for. Most people build the product they imagined. I built the
+one the numbers pointed at.
+
+ACHIEVEMENT 2 — BIO MED BHARAT / POSHAN
+
+Outcome: I won 2nd place at Bio Med Bharat and ₹50,000 for Poshan, an app that flags
+developmental and nutritional risk in young children.
+
+What made it hard: I couldn't fake this one. It screens children — if the model is
+wrong, or if it just throws out a scary score with no reason, a health worker can't act
+on it and won't use it twice. There is no clean dataset lying around for Indian child
+growth screening, so I couldn't just throw a big model at it and hope.
+
+What I did differently: I designed around what actually exists at a routine checkup,
+and I made the app show WHY it raised a flag instead of just a number. The real work was
+restraint — deciding what not to build — because a tool that explains itself gets used,
+and one that doesn't, doesn't.
+
+
+=====================================================================
+A TIME YOU SOLVED SOMETHING WITHOUT RESOURCES, AUTHORITY, OR "PROPER" PROCESS
+(Answer in EXACTLY 3 lines: constraint / what you did / how you knew it worked)
+=====================================================================
+
+CHITTI's video content was piling up, and I had no money to hire editors and no
+authority to change how the team worked.
+So I wrote a script that auto-compressed and trimmed the videos on upload, and quietly
+routed the whole pipeline through it.
+Within a week turnaround dropped from days to hours, and once I had those numbers
+nobody cared that I'd done it without asking.
+
+
+=====================================================================
+IF WE BUILT A ROLE JUST FOR YOU — WHAT PROBLEM WOULD YOU SOLVE, AND WHAT'S
+YOUR FIRST MOVE IN WEEK ONE?
+=====================================================================
+
+--- VARIANT A — for Software Engineer / Solution Engineer ---
+
+I'd own the gap between what a drone actually does in the field and what our engineers
+can see back home. Right now, when a mission half-fails at a customer site, the truth is
+scattered across logs, video, weather, and the one config value somebody changed — and it
+takes days to piece together. That gap is the difference between a customer trusting
+autonomy and ripping it out.
+
+Week one: I'd sit with support and shadow one live deployment, then pull three real
+failure cases and rebuild each one as a single reproducible test that runs on my laptop.
+Then I'd write the plain-English runbook for those three. If the next incident debugs in
+minutes instead of days — and every fix lands as a regression test, not a memory — that's
+a system, not a lucky week.
+
+
+--- VARIANT B — for Agentic AI Engineer ---
+
+I'd own the gap between an agent that looks clever in a demo and an agent I'd actually let
+near a live drone. Anyone can wire up a loop, hand it some tools, and show you one slick
+run. Almost nobody can tell you the moment it quietly started making worse decisions, or
+what it should refuse to do without a human watching. That's the exact thing standing
+between "cool agent" and "put it on a mission over a customer site" — and it's the part
+most teams skip because it's slow and unglamorous.
+
+Week one: I'd grab five real tasks our agents are supposed to handle and run them straight
+through the agent while recording everything — every tool call, every decision point, what
+it retrieved, where it stalled or guessed. Then I'd turn that into a scorecard that checks
+outcomes instead of vibes: did it actually finish the task, did it pick the right tool,
+did it invent a value, did it need a human and fail to ask. Once that exists, I'd lay in
+the safety floor on top of it — what it must never do alone, what it hands back to a
+person, and what it falls back to when a model or an API is down.
+
+If I do that right, the team can change a prompt on Tuesday and know by Tuesday night
+whether they made the agents better or just different. That's the difference between
+shipping agents and gambling on them.
+
+
+=====================================================================
+WHAT'S THE MOST TECHNICALLY IMPRESSIVE THING YOU'VE BUILT?
+(Problem / solution / stack / outcome / links)
+=====================================================================
+
+parda — a local privacy layer that sits between you and AI tools.
+
+The problem: I was pasting real client names, emails and ID numbers into AI tools, and
+every "just self-host it" answer still sent my data somewhere I didn't control.
+
+What I built: before text leaves the machine, parda swaps real names, contacts, Indian
+IDs (Aadhaar, PAN, GSTIN, UPI, IFSC) and secrets for realistic stand-ins — a different
+name, a checksum-valid Aadhaar, a believable email address — and when the AI's answer
+comes back, it puts the real values back, including inside tool calls and streaming
+responses. The same person gets the same fake identity every time, so the model's
+reasoning still holds across a conversation.
+
+Stack: Rust for the core (speed matters — the name model runs around 10ms per paragraph),
+Python for training and evaluation, an on-device GLiNER-PII ONNX model, Aho-Corasick for
+my own dictionary, checksum rules for the ID formats, an encrypted vault for the mapping,
+and a local proxy that plugs into the Anthropic and OpenAI SDKs. It fails closed — if the
+model is missing it refuses to send rather than leaking.
+
+Outcome: I use it daily, it streams without breaking, and it's honest about its limits.
+Code: https://github.com/deadhearth01/parda
+
+
+=====================================================================
+SOMETHING YOU'RE DEEPLY PASSIONATE ABOUT OUTSIDE ACADEMICS
+=====================================================================
+
+It's really two things that are secretly one thing: taking things apart to see how they
+work, then building something out of what I learned.
+
+Lately that's hardware. I keep a Raspberry Pi 4 and a Jetson Nano on my desk, and I've
+been building small robots you can just talk to. You say it in plain English, the camera
+finds the object, and the arm picks it up and moves it. It's rough, it fails constantly,
+and that's the fun — every failure is a concrete thing to chase. I don't stay in one lane;
+I'll bounce between the wiring, the computer vision, and the model side in the same
+evening.
+
+The other half is security. I like finding vulnerabilities and writing exploits for them —
+breaking my own stuff on purpose so I understand exactly where it bends. Same instinct as
+the robots, just pointed at software.
+
+And I'll be straight about how I build: I lean on coding agents and AI agents a lot. Not
+to skip the learning, but to go deeper faster — I use them to read unfamiliar code and
+argue a design through, then verify it by hand. They make me faster at understanding, not
+lazier about it.
+
+
+=====================================================================
+SOLUTIONS ENGINEER INTERN — RAIL OPERATOR DISCOVERY CALL
+(The first 5 questions I'd ask, and why each one matters to scoping.)
+=====================================================================
+
+1) "Walk me through one inspection exactly as it happens today — who walks the track, how
+often, how long it takes, what they record, and what makes them stop everything and call
+maintenance."
+Why: This is the baseline. Without it I don't know what I'm replacing, what "faster" or
+"safer" actually means to them, or which number makes this worth buying.
+
+2) "Tell me about the track itself — tunnels, bridges, electrified sections, dense
+vegetation, dead spots with no GPS, and the worst weather you'd still want a drone flying in."
+Why: This single answer decides the whole design — where docks go, which sensors, the
+flight profile, and whether autonomous flight is even legal there. Get it wrong and
+everything downstream is wrong.
+
+3) "Where do inspection findings live today, and how does a drone's output land in that
+system without becoming yet another inbox nobody checks?"
+Why: The classic way a pilot dies is that the output never reaches the customer's real
+workflow. Integration isn't a detail — it's the difference between adopted and abandoned.
+
+4) "What would make your inspectors trust a drone's call over their own eyes — a photo, a
+specific defect class, a confidence number, or a second pass?"
+Why: This sets the accuracy bar and how much human review we build in. Promise a black box
+that's always right and the first miss kills the program.
+
+5) "What approvals gate this — BVLOS, night operations, railway safety rules — and who
+signs them off?"
+Why: This is almost always the longest pole. I'd rather find the blocker on this call than
+in week six.
+
+(My bias on the call: no yes-manning. If a customer wants something that won't survive
+contact with the site, I'd rather tell them on the call and scope the version that works.)
