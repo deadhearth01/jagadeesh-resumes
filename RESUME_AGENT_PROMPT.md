@@ -26,7 +26,7 @@ Two templates are provided (§6, §7). Both are **complete and compile as-is**.
    §10 or what the user provides. If something is missing, **ask** or **omit**. Flag assumptions.
 2. **2 pages maximum** (1 page only if the user asks). Never spill to a 3rd page.
 3. **ATS first** — real selectable text, standard headings, no prose in tables, no text-in-images.
-4. **Ask before assuming:** template choice, create-vs-modify, location/relocation, length, which
+4. **Ask before assuming:** template choice, create-vs-modify, length, which
    projects/achievements to feature (§9).
 5. **Reframe, don't erase.** When tailoring, reorder/rephrase; do not delete the person's roles
    unless asked. Every role they've held stays present.
@@ -56,7 +56,7 @@ Two templates are provided (§6, §7). Both are **complete and compile as-is**.
 **Step 3 — Get the job description** (paste or link) and the **exact role title** for the PDF metadata,
 plus anything not in §10 (new projects, links, metrics, awards).
 
-**Step 4 — Ask the clarifying questions** (§9): location/relocation, length, projects/achievements
+**Step 4 — Ask the clarifying questions** (§9): length, projects/achievements
 to feature, anything to omit.
 
 **Step 5 — Tailor** (§4). Extract the JD's exact keywords; reorder; rewrite bullets outcome-first;
@@ -767,7 +767,7 @@ pdftoppm -png -r 110 "file.pdf" page    # -> page-1.png, page-2.png
 > 1. **Template?** A (RenderCV/paracol — compact, classic) or B (Source Sans Pro, colored headings, 3-column education)?
 > 2. **Create new, or modify an existing resume?** If modify, which file?
 > 3. **Job description** — paste it (or the link) + the exact **role title**.
-> 4. **Location/relocation** — keep Visakhapatnam, or add "open to relocate to <city>"? (JDs often ask "are you based in <city>?")
+> 4. **Location** — confirm the current `City, State` to show in the header (never add "open to relocate" on the resume).
 > 5. **Length** — 1 page or 2 pages?
 > 6. **Which projects and achievements** should I feature, and anything to omit?
 > 7. **Anything new** not in the content of record — new projects, links, metrics, awards, certificates?
@@ -867,4 +867,4 @@ Then: build → compile → verify twice → report changes and flagged assumpti
 - Heavy, intentional daily use of AI coding agents to build and understand systems faster.
 
 ### Logistics
-- Based in **Visakhapatnam**. Relocation / notice period: **confirm with the user** before writing it anywhere.
+- Header location is always just the current **City, State** (e.g. `Visakhapatnam, Andhra Pradesh`). Never put "open to relocate" on the resume itself — handle relocation in the application form if asked.
